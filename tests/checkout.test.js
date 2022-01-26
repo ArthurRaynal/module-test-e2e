@@ -28,26 +28,26 @@ describe("Checkout process", () => {
         await page.click('#checkout');
         await page.waitFor(1000);
 
-        const html2 = await page.$eval('.title', e => e.innerHTML);
-        expect(html2).toContain("Checkout: Your Information")
-
-        await page.type('#first-name', 'Jean');
-        await page.type('#last-name', 'Neymar');
-        await page.type('#postal-code', '77777');
-
-        await page.click('#continue');
-        await page.waitFor(1000);
-
-        const html3 = await page.$eval('.title', e => e.innerHTML);
-        expect(html).toContain("Sauce Labs Bike Light")
-        expect(html3).toContain("Checkout: Overview")
-
-        await page.click('#finish');
-        await page.waitFor(1000);
-
-
-
-        await page.screenshot({path: './tests/img/checkout.png'});
+        // const html2 = await page.$eval('.title', e => e.innerHTML);
+        // expect(html2).toContain("Checkout: Your Information")
+        //
+        // await page.type('#first-name', 'Jean');
+        // await page.type('#last-name', 'Neymar');
+        // await page.type('#postal-code', '77777');
+        //
+        // await page.click('#continue');
+        // await page.waitFor(1000);
+        //
+        // const html3 = await page.$eval('.title', e => e.innerHTML);
+        // expect(html).toContain("Sauce Labs Bike Light")
+        // expect(html3).toContain("Checkout: Overview")
+        //
+        // await page.click('#finish');
+        // await page.waitFor(1000);
+        //
+        //
+        //
+        // await page.screenshot({path: './tests/img/checkout.png'});
 
     }, timeout);
 
