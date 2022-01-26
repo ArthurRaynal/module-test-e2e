@@ -28,6 +28,8 @@ describe("Auth features", () => {
 
         console.log("disconnected")
         await page.screenshot({path: './tests/img/dc.png'});
+
+        // test
     }, timeout);
 
     // cette fonction est lancée avant chaque test de cette
