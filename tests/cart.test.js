@@ -1,4 +1,4 @@
-const timeout = 15000;
+const timeout = 30000;
 
 // Test des fonctionnalités de gestion du panier
 describe("Cart features", () => {
