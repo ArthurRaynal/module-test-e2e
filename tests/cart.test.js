@@ -8,24 +8,23 @@ describe("Cart features", () => {
 
         await page.goto(process.env.TESTED_WEBSITE);
         await page.waitForSelector('#user-name');
-        await page.waitForSelector('#password');
         await page.type('#user-name', process.env.TEST_LOGIN);
+        await page.waitForSelector('#password');
         await page.type('#password', process.env.TEST_PASSWORD);
         await page.waitForSelector('#login-button');
         await page.click('#login-button');
-
-        console.log('connected')
-
-        await page.waitForSelector('#add-to-cart-sauce-labs-bike-light');
-        await page.click('#add-to-cart-sauce-labs-bike-light');
+        // à compléter
+        await page.waitForSelector('#add-to-cart-sauce-labs-backpack');
+        await page.click('#add-to-cart-sauce-labs-backpack');
         await page.click('.shopping_cart_link');
 
-        // await page.waitFor(2000);
+        await page.waitForSelector('.cart_list');
+
+        const html = await page.$eval('body', e => e.innerHTML);
+        expect(html).toContain("inventory_item_name");
+        await page.click('#remove-sauce-labs-backpack');
 
         await page.screenshot({path: './tests/img/cart.png'});
-
-        // const html = await page.$eval('.inventory_item_name', e => e.innerHTML);
-        // expect(html).toContain("Sauce Labs Bike Light")
 
     }, timeout);
 
