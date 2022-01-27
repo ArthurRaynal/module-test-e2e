@@ -20,7 +20,7 @@ describe("Cart features", () => {
         await page.click('#add-to-cart-sauce-labs-bike-light');
         await page.click('.shopping_cart_link');
 
-        await page.waitFor(2000);
+        // await page.waitFor(2000);
 
         await page.screenshot({path: './tests/img/cart.png'});
 
